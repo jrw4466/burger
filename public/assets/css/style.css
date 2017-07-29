@@ -1,6 +1,14 @@
 .jumbotron {
 	background: #FFE4B5;
 	text-align: center;
+	padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 30px;
 }
 
 body {
@@ -12,4 +20,12 @@ body {
 }
 .eat {
 	text-align:center;
+}
+
+#header-image {
+	width: 200px;
+}
+
+.panel-body {
+	background: white;
 }

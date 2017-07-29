@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div id="header" class="row">
       <div class="col-lg-12">
-          <img class="image" src="../public/assets/images/cheeseburger.png" alt="burger">
+          <img src="/images/cheeseburger.png" id="header-image" alt="burger">
           <h1>Eat Da Burger</h1>
       </div>
     </div>
@@ -13,38 +13,42 @@
   <div id="content" class="row">
     <div class="col-lg-6">
       <h2>Burgers Not Devoured!</h2>
-      <div class="eat">
-      <ol>
-        {{#each burgers}}
-          {{#unless this.devoured}}
-            <li>
-              {{this.burger_name}}
-              <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="true">
-                <button type="submit">Devour?</button>
-              </form>
-            </li>
-          {{/unless}}
-        {{/each}}
-      </ol>
+      <div class="panel-body">
+        <div class="well">
+          <ol>
+            {{#each burgers}}
+              {{#unless this.devoured}}
+                <li>
+                  {{this.burger_name}}
+                  <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button type="submit">Devour?</button>
+                  </form>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ol>
+        </div>
       </div>
     </div>
     <div class="col-lg-6">
       <h2>Burgers Eaten!</h2>
-      <div class="eat">
-      <ol>
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <li>
-              {{this.burger_name}}
-              <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="false">
-                <button type="submit">READY TO EAT!</button>
-              </form>
-            </li>
-          {{/if}}
-        {{/each}}
-      </ol>
+      <div class="panel-body">
+        <div class="well">
+          <ol>
+            {{#each burgers}}
+              {{#if this.devoured}}
+                <li>
+                  {{this.burger_name}}
+                  <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="false">
+                    <button type="submit">Regurgitate?</button>
+                  </form>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ol>
+        </div>
       </div>
     </div>
   </div>  
